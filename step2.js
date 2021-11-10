@@ -1,6 +1,8 @@
 const fs = require('fs');
 const axios = require('axios');
 
+const argv = process.argv;
+
 function cat(file_path) {
   // opens non URL file paths
   fs.readFile(file_path, 'utf8', function (err, data) {
@@ -21,7 +23,6 @@ async function webCat(link) {
   }
 }
 
-const argv = process.argv;
 if (argv[2].startsWith('http')) {
   webCat(argv[2]);
 } else {

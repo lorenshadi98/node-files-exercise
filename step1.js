@@ -1,4 +1,7 @@
 const fs = require('fs');
+
+const argv = process.argv;
+
 function cat(file_path) {
   fs.readFile(file_path, 'utf8', function (err, data) {
     if (err) {
@@ -8,5 +11,5 @@ function cat(file_path) {
     console.log('successfully read data: ', data);
   });
 }
-const argv = process.argv;
+
 cat(argv[2]);
